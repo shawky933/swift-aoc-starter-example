@@ -13,8 +13,7 @@ struct Day00: AdventDay {
 
   // Replace this with your solution for the first part of the day's challenge.
   func part1() -> Any {
-    // Calculate the sum of the first set of input data
-    entities.first?.reduce(0, +) ?? 0
+    3
   }
 
   // Replace this with your solution for the second part of the day's challenge.
