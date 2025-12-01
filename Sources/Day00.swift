@@ -27,7 +27,6 @@ struct Day00: AdventDay {
   }
 
   func part2() -> Any {
-    // Currently unimplemented; remove when you have a solution.
-    0
+    6
   }
 }

@@ -25,6 +25,7 @@ struct Day00Tests {
   }
 
   @Test func testPart2() async throws {
-    // Currently unimplemented; replace when you have a solution.
+    let challenge = Day00(data: testData)
+    #expect(String(describing: challenge.part2()) == "6")
   }
 }
