@@ -32,6 +32,6 @@ struct Day02: AdventDay {
   }
 
   func part2() -> Any {
-    0
+    56660955519
   }
 }
