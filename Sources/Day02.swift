@@ -32,6 +32,34 @@ struct Day02: AdventDay {
   }
 
   func part2() -> Any {
-    56660955519
+    var sum = 0
+    for range in entities {
+      for i in range {
+        let str = String(describing: i)
+        for rangeLength in 1..<(str.count / 2) + 1 {
+          var found = false
+          guard str.count % rangeLength == 0 else { continue }
+          let endIndex = str.index(str.startIndex, offsetBy: rangeLength)
+          let initial = str[..<endIndex]
+          for index in stride(from: rangeLength, to: str.count, by: rangeLength) {
+
+            let startIndex = str.index(str.startIndex, offsetBy: index)
+            let nextEndIndex = str.index(str.startIndex, offsetBy: index + rangeLength)
+            let part = str[startIndex..<nextEndIndex]
+
+            guard part == initial else { break }
+            if nextEndIndex == str.endIndex {
+              sum += i
+              found = true
+              break
+            }
+          }
+          if found {
+            break
+          }
+        }
+      }
+    }
+    return sum
   }
 }
