@@ -27,6 +27,23 @@ struct Day00: AdventDay {
   }
 
   func part2() -> Any {
-    6
+    var current = 50
+    var count = 0
+    for entity in entities {
+      let turn = entity.first!
+      var amount = Int(entity.dropFirst())!
+      while amount > 0 {
+        current = turn == "L" ? current - 1 : current + 1
+        if current < 0 {
+          current += 100
+        }
+        if current >= 100 {
+          current -= 100
+        }
+        count = current == 0 ? count + 1 : count
+        amount -= 1
+      }
+    }
+    return count
   }
 }
